@@ -23,7 +23,15 @@ def in_box(rect, pos):
         return True
     else:
         return False
-
+def in_box(ret, pos):
+    # rec[0] - x, rec[1] - y, rec[2] - w, rec[3] - h
+    # pos[0] - x, pos[1] - y
+    if(pos[0]>ret[0] and pos[0]<(ret[0]+ret[2]) and pos[1]>ret[1] and pos[1]<(ret[1]+ret[3])):
+        return True
+    else:
+        return False
+    
+    
 def add_kps(files, p):
     detector = dlib.get_frontal_face_detector()
     predictor = dlib.shape_predictor(p)
